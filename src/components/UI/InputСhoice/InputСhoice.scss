@@ -1,0 +1,30 @@
+.input-choice {
+	cursor: pointer;
+	span {
+		user-select: none;
+		width: inherit;
+		display: block;
+		padding: 4px 8px;
+		background-color: var(--bg-input);
+		color: var(--text-input);
+		border: 1px solid transparent;
+		border-radius: var(--radius-small);
+		transition: border-color 0.3s ease, color 0.3s ease;
+	}
+	input {
+		display: none;
+		&:checked + span {
+			color: var(--blue_dark);
+			border-color: var(--blue);
+		}
+	}
+	&:focus,
+	&:active,
+	&:hover {
+		outline: none;
+		span {
+			color: var(--blue_dark);
+			border-color: var(--blue);
+		}
+	}
+}
