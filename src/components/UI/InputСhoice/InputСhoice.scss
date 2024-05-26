@@ -18,9 +18,8 @@
 			border-color: var(--blue);
 		}
 	}
-	&:focus,
-	&:active,
-	&:hover {
+	&:hover,
+	&:focus {
 		outline: none;
 		span {
 			color: var(--blue_dark);

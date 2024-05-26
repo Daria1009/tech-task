@@ -14,7 +14,7 @@ const TableItem = ({ children, data, id }) => {
 
 	return (
 		<>
-			<div className='list-table__item' key={id}>
+			<div className='list-table__item'>
 				<div className="list-table__header">
 					<h2 className="title">{children}</h2>
 					<div className="list-table__btns">
@@ -39,9 +39,9 @@ const TableItem = ({ children, data, id }) => {
 						</thead>
 						<tbody>
 							{body.map((row, index) => (
-								<tr key={id + index}>
+								<tr key={id + index + row}>
 									{row.map((item, i) =>
-										<td key={id + '0' + i}>
+										<td key={item + i}>
 											{item}
 										</td>
 									)}

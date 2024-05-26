@@ -5,10 +5,11 @@ import './ModalForm.scss'
 
 const ModalForm = ({ children, visible, setVisible, listData }) => {
 	let [input, setInput] = useState(0);
-	const visibleModal = visible ? ' active' : '';
+	const visibleModal = visible ? 'active' : '';
+	const closeModalKey = (event) => event.keyCode === 27 && setVisible(false);
 
 	return (
-		<div className={'modal' + visibleModal} onClick={() => setVisible(false)}>
+		<div className={'modal ' + visibleModal} onClick={() => setVisible(false)} onKeyDown={closeModalKey}>
 			<div className="modal__wrapper" onClick={(e) => e.stopPropagation()}>
 				<div className="modal__header">
 					<div className="modal__title">
