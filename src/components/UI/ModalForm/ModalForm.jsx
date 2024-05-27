@@ -6,7 +6,15 @@ import './ModalForm.scss'
 const ModalForm = ({ children, visible, setVisible, listData }) => {
 	let [input, setInput] = useState(0);
 	const visibleModal = visible ? 'active' : '';
-	const closeModalKey = (event) => event.keyCode === 27 && setVisible(false);
+
+	const closeModalKey = (event) => {
+		const target = event.target;
+		const key = event.keyCode;
+		key === 27 && setVisible(false)
+		if ((key === 38 || key === 40) && target.className === 'modal__close') {
+			target.closest('.modal').querySelector('label').focus();
+		};
+	};
 
 	return (
 		<div className={'modal ' + visibleModal} onClick={() => setVisible(false)} onKeyDown={closeModalKey}>

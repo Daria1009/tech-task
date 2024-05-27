@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import InputСhoice from '../InputСhoice/InputСhoice';
 
 const ListInput = ({ data, setEtrance, input, setInput }) => {
